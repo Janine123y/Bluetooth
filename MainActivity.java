@@ -47,9 +47,8 @@ public class MainActivity extends AppCompatActivity {
         if (resultCode == DISCOVER_DURATION && requestCode == REQUEST_BLU){
 
             Intent intent = new Intent();
-            String tmp = Intent.ACTION_SEND;
-            Intent.setAction(tmp);
-            Intent.setType("text/plain");
+            intent.setAction(intent.ACTION_SEND);
+            intent.setType("text/plain");
             File f = new File(Environment.getExternalStorageDirectory(), "md5sum.txt");
             intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(f));
 
